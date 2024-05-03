@@ -6,19 +6,19 @@ using UnityEngine.SceneManagement;
 public enum Scenes
 {
     COREGAMEPLAY,
-    UI
+    ENVIRONMENT
 }
 
 public class SceneController : MonoBehaviour
 {
 
     List<string> sceneList = new List<string>
-    { "CoreGamePlay", "UI" };
+    { "CoreGamePlay", "Environment" };
 
     // Start is called before the first frame update
     void Start()
     {
-        AddScene(sceneList[(int)Scenes.UI]);
+        AddScene(sceneList[(int)Scenes.ENVIRONMENT]);
     }
 
     // Update is called once per frame
