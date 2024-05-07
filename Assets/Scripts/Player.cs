@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float movSpeed;
     [SerializeField] Animator animator;
-
+    [SerializeField] UnityEvent OnDeath;
+    
     //Private Variables
     bool onGround = true;
     Vector2 movDirection;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         //Go to Game Over screen
+        OnDeath.Invoke();
     }
     
     // Start is called before the first frame update

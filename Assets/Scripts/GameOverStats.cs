@@ -13,7 +13,7 @@ public class GameOverStats : MonoBehaviour
     void Start()
     {
         stats.text = "You survived for " + Mathf.RoundToInt(score.LevelTimer) + " seconds!";
-        highScore.text = "Current high score: " + score.HighScore;
+        highScore.text = "Current high score: " + Mathf.RoundToInt(score.HighScore) + " seconds";
     }
 
     // Update is called once per frame

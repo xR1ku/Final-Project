@@ -20,7 +20,16 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AddScene(sceneList[(int)Scenes.ENVIRONMENT]);
+        
+    }
+
+    void OnEnable()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == sceneList[(int)Scenes.COREGAMEPLAY])
+        {
+            AddScene(sceneList[(int)Scenes.ENVIRONMENT]);
+        }
     }
 
     // Update is called once per frame
@@ -44,8 +53,8 @@ public class SceneController : MonoBehaviour
         SceneManager.UnloadSceneAsync(scene);
     }
 
-    void OnPlayerDeath()
+    public void OnPlayerDeath()
     {
-
+        SceneManager.LoadScene(sceneList[(int)Scenes.GAMEOVER]);
     }
 }
