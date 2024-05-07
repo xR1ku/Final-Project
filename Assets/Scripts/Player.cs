@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class Player : MonoBehaviour
     private void OnEnable()
     {
 
+    }
+
+    private void OnDisable()
+    {
+        //Go to Game Over screen
     }
     
     // Start is called before the first frame update
@@ -42,12 +48,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Physics based updates (like our characters movement events)
     void FixedUpdate()
     {
         rb.AddForce(movDirection);
         
     }
 
+    //Event called when a directional input is done by the player
     public void OnMovement(InputValue value)
     {
         var v = value.Get<float>();
@@ -55,6 +63,7 @@ public class Player : MonoBehaviour
         movDirection.y = (rb.velocity.y);
     }
 
+    //Event called when space bar or south button is pressed by player
     public void OnJump()
     {
         if ( onGround )
@@ -64,6 +73,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Collision events for our player
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
@@ -71,8 +81,14 @@ public class Player : MonoBehaviour
             onGround = true;
             //animator.SetBool("OnGround", true);
         }
+
+        if (collision.gameObject.layer == 7)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
+    //Collision exits for our player
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
@@ -80,5 +96,6 @@ public class Player : MonoBehaviour
             onGround = false;
             //animator.SetBool("OnGround", false);
         }
+
     }
 }

@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 public enum Scenes
 {
     COREGAMEPLAY,
-    ENVIRONMENT
+    ENVIRONMENT,
+    GAMEOVER,
+    MAINMENU
 }
 
 public class SceneController : MonoBehaviour
 {
 
     List<string> sceneList = new List<string>
-    { "CoreGamePlay", "Environment" };
+    { "CoreGamePlay", "Environment", "GameOver", "MainMenu" };
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,11 @@ public class SceneController : MonoBehaviour
         
     }
 
+    public void SwitchScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
     void AddScene(string scene)
     {
         SceneManager.LoadScene(scene, LoadSceneMode.Additive);
@@ -35,5 +42,10 @@ public class SceneController : MonoBehaviour
     void RemoveScene(string scene)
     {
         SceneManager.UnloadSceneAsync(scene);
+    }
+
+    void OnPlayerDeath()
+    {
+
     }
 }
