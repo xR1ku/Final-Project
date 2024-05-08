@@ -57,4 +57,9 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneList[(int)Scenes.GAMEOVER]);
     }
+
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
 }
