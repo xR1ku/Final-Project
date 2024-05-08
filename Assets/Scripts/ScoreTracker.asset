@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ScoreTracker
   m_EditorClassIdentifier: 
   LevelTimer: 0
-  HighScore: 0
+  HighScore: 4.988301
