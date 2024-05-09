@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     {
         var v = value.Get<float>();
         movDirection.x = (v * movSpeed);
-        movDirection.y = (rb.velocity.y);
+        //movDirection.y = rb.velocity.y;
     }
 
     //Event called when space bar or south button is pressed by player
