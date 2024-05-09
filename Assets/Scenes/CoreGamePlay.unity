@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 42993055}
   - component: {fileID: 42993054}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TimerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,6 +157,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 907716544}
   score: {fileID: 11400000, guid: 4a602ba2df9e7e644a216014b2cb7501, type: 2}
+  maxSpawnRate: 4
+  minSpawnRate: 1
+  spawnTime: 2
+  spawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &42993055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,8 +666,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.96, y: 0.96}
+  m_Offset: {x: 0, y: -0.14278972}
+  m_Size: {x: 0.6660209, y: 0.7500149}
   m_Direction: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
