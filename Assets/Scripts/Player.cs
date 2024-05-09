@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
             //animator.SetBool("OnGround", true);
         }
 
-        if (collision.gameObject.layer == 7)
+        if (collision.gameObject.layer == 7 || collision.gameObject.layer == 8)
         {
             gameObject.SetActive(false);
         }
