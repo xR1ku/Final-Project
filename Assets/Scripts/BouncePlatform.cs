@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BouncePlatform : MonoBehaviour
 {
-    [NonSerialized] public AudioManager audioManager;
+    private AudioManager audioManager;
 
     private void Start()
     {

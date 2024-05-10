@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] float movSpeed;
     [SerializeField] Animator animator;
     [SerializeField] UnityEvent OnDeath;
-    [NonSerialized] public AudioManager audioManager;
+    private AudioManager audioManager;
     
     //Private Variables
     bool onGround = true;
