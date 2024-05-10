@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] float movSpeed;
     [SerializeField] Animator animator;
     [SerializeField] UnityEvent OnDeath;
+    [NonSerialized] public AudioManager audioManager;
     
     //Private Variables
     bool onGround = true;
@@ -29,11 +31,16 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         movDirection = new Vector2(0, 0);
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>(); //S.S
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(audioManager == null){ //S.S
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>(); //S.S
+        }
+
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         if (!onGround)
         {
@@ -66,6 +73,7 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             animator.SetTrigger("Jump");
+            audioManager.playSFX(audioManager.jump); //S.S
         }
     }
 
@@ -80,6 +88,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.layer == 7 || collision.gameObject.layer == 8)
         {
+            audioManager.playSFX(audioManager.death); //S.S
             gameObject.SetActive(false);
         }
     }

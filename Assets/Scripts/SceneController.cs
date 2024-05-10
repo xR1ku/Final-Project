@@ -9,14 +9,15 @@ public enum Scenes
     COREGAMEPLAY,
     ENVIRONMENT,
     GAMEOVER,
-    MAINMENU
+    MAINMENU,
+    AUDIO
 }
 
 public class SceneController : MonoBehaviour
 {
     //Create a list to hold the string values of levels
     List<string> sceneList = new List<string>
-    { "CoreGamePlay", "Environment", "GameOver", "MainMenu" };
+    { "CoreGamePlay", "Environment", "GameOver", "MainMenu", "Audio" };
 
     void OnEnable()
     {
@@ -24,6 +25,7 @@ public class SceneController : MonoBehaviour
         if (currentScene.name == sceneList[(int)Scenes.COREGAMEPLAY])
         {
             AddScene(sceneList[(int)Scenes.ENVIRONMENT]);
+            AddScene(sceneList[(int)Scenes.AUDIO]);
         }
     }
 
