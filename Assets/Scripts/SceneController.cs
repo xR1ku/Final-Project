@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Create an enum to refer to scenes in the game
 public enum Scenes
 {
     COREGAMEPLAY,
@@ -13,15 +14,9 @@ public enum Scenes
 
 public class SceneController : MonoBehaviour
 {
-
+    //Create a list to hold the string values of levels
     List<string> sceneList = new List<string>
     { "CoreGamePlay", "Environment", "GameOver", "MainMenu" };
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     void OnEnable()
     {

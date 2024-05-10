@@ -17,12 +17,6 @@ public class Player : MonoBehaviour
     //Private Variables
     bool onGround = true;
     Vector2 movDirection;
-    
-
-    private void OnEnable()
-    {
-
-    }
 
     private void OnDisable()
     {
@@ -55,7 +49,6 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.AddForce(movDirection);
-        
     }
 
     //Event called when a directional input is done by the player

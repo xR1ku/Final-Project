@@ -21,20 +21,15 @@ public class Timer : MonoBehaviour
     GameObject enemySpawner;
     EnemySpawner mySpawner;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
+        //Code controlling timer display during game
         timer.text = "Survived: " + Mathf.RoundToInt(score.LevelTimer);
         score.LevelTimer += Time.deltaTime;
+        
+        //Code controlling the timing of spawning enemies
         spawnTimer += Time.deltaTime;
-
         if (spawnTimer > spawnTime) 
         {
             spawn.Invoke();
