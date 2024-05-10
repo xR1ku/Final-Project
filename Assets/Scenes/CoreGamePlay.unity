@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 907716544}
   score: {fileID: 11400000, guid: 4a602ba2df9e7e644a216014b2cb7501, type: 2}
-  maxSpawnRate: 4
+  maxSpawnRate: 2
   minSpawnRate: 1
   spawnTime: 2
   spawn:
