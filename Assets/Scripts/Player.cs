@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private AudioManager audioManager;
     
     //Private Variables
-    bool onGround = true;
+    bool onGround = false;
     Vector2 movDirection;
 
     private void OnDisable()
